@@ -1,0 +1,6 @@
+name: "Bundle Update Action"
+description: "Github Action to update Ruby gems in a project"
+author: "DmitrySadovnikov"
+runs:
+  using: "docker"
+  image: "Dockerfile"
