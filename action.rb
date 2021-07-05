@@ -11,8 +11,7 @@ CONFIG = {
   reviewers: ENV['REVIEWERS']&.split(','),
   assignees: ENV['ASSIGNEES']&.split(','),
   labels: ENV['LABELS']&.split(','),
-  gems: ENV['GEMS']&.split(','),
-  accept: 'application/vnd.github.groot-preview+json'
+  gems: ENV['GEMS']&.split(',')
 }
 
 def client
@@ -41,6 +40,7 @@ def update_gems
 end
 
 def commit_updates
+  `git add .`
   `git commit -m "bundle update"`
 end
 

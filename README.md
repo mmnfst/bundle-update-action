@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.2 # ruby version of a project
+          bundler-cache: true
       - uses: mmnfst/bundle-update-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }} # token of your account
